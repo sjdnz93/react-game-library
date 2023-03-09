@@ -42,7 +42,7 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home games={games} />} />
+          <Route path="/" element={<Home games={games} setGames={setGames} />} />
           <Route path="/pc" element={<PCGames />} />
           <Route path="/browser" element={<BrowserGames />} />
           <Route path="/games/:gameID" element={<GamePage />} />
