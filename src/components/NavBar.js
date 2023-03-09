@@ -17,10 +17,10 @@ const NavBar = () => {
             <Nav.Link to="/" as={Link}>Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link to="/" as={Link}>All PC Games</Nav.Link>
+            <Nav.Link to="/pc" as={Link}>All PC Games</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link to="/" as={Link}>All Broswer Games</Nav.Link>
+            <Nav.Link to="/browser" as={Link}>All Broswer Games</Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar>

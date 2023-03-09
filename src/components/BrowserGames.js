@@ -1,13 +1,32 @@
-//!React
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-//!Bootstrap components
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
-const Home = ({ games }) => {
+const BrowserGames = () => {
+
+  const [browserGame, setBrowserGames] = useState([])
+
+  //console.log('GAMES', games)
+
+  useEffect(() => {
+  
+    const getBrowserGames = async() => {
+      try {
+        const { data } = await axios.get('/api/games?platform=browser')
+        console.log(data)
+        setBrowserGames(data.sort((a,b) => a.title > b.title ? 1 : -1 ))
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    getBrowserGames()
+
+  }, [])
 
   return (
 
@@ -15,10 +34,10 @@ const Home = ({ games }) => {
       <Container>
         <Row>
           <Col xs="12">
-            <h1 className="display-4 mb-4 text-center">Home Page</h1>
+            <h1 className="display-4 mb-4 text-center">Free Web Browser Games</h1>
           </Col>
           <div className="games-wrapper">
-            {games.map(game => {
+            {browserGame.map(game => {
               const { id, title, thumbnail, genre, platform } = game
               //console.log('PICTURE', thumbnail)
               return (
@@ -43,8 +62,5 @@ const Home = ({ games }) => {
   )
 
 
-
-
 }
-
-export default Home
+export default BrowserGames

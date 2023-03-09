@@ -1,13 +1,33 @@
-//!React
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-//!Bootstrap components
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
-const Home = ({ games }) => {
+
+const PCGames = () => {
+
+  const [pcGame, setPCGames] = useState([])
+
+  //console.log('GAMES', games)
+
+  useEffect(() => {
+  
+    const getPCGames = async() => {
+      try {
+        const { data } = await axios.get('/api/games?platform=pc')
+        console.log(data)
+        setPCGames(data.sort((a,b) => a.title > b.title ? 1 : -1 ))
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    getPCGames()
+
+  }, [])
 
   return (
 
@@ -15,10 +35,10 @@ const Home = ({ games }) => {
       <Container>
         <Row>
           <Col xs="12">
-            <h1 className="display-4 mb-4 text-center">Home Page</h1>
+            <h1 className="display-4 mb-4 text-center">Free PC Games</h1>
           </Col>
           <div className="games-wrapper">
-            {games.map(game => {
+            {pcGame.map(game => {
               const { id, title, thumbnail, genre, platform } = game
               //console.log('PICTURE', thumbnail)
               return (
@@ -41,10 +61,6 @@ const Home = ({ games }) => {
       </Container>
     </main >
   )
-
-
-
-
 }
 
-export default Home
+export default PCGames
