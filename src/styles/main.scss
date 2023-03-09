@@ -2,8 +2,51 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  background: #2e2e2e;
+}
+
+
+.navbar-nav {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
+    .nav-item {
+      width: 160px;
+      text-align: center;
+
+      .nav-link {
+        background: #666666;
+        color: darkorange;
+        border-radius: 5px;
+      }
+      
+    }
+
+}
+
+
+
+h1 { 
+  color:darkorange;
+}
+
 .games-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.game {
+  border: solid 1px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: darkgrey;
+
+  img {
+    //height:150px;
+  }
 }
