@@ -1,3 +1,5 @@
+@import './components/GamePage';
+
 * {
   box-sizing: border-box;
 }
@@ -22,7 +24,7 @@ body {
         color: darkorange;
         border-radius: 5px;
       }
-      
+
     }
 
 }
@@ -46,7 +48,4 @@ h1 {
   overflow: hidden;
   background: darkgrey;
 
-  img {
-    //height:150px;
-  }
 }

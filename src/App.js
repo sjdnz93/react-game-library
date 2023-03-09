@@ -13,6 +13,7 @@ import Card from 'react-bootstrap/Card'
 //!Custom components
 import Home from './components/Home'
 import NavBar from './components/NavBar'
+import GamePage from './components/GamePage'
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/games/:gameID" element={<GamePage />} />
         </Routes>
       </BrowserRouter>
 

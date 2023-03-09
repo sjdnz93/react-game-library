@@ -18,7 +18,7 @@ const Home = () => {
       try {
         const { data } = await axios.get('/api/games') // * <-- replace with your endpoint
         //console.log(data)
-        setGames(data)
+        setGames(data.sort((a, b) => a.title > b.title ? 1 : -1))
       } catch (err) {
         console.log(err.message)
       }
@@ -41,15 +41,15 @@ const Home = () => {
               console.log('PICTURE', thumbnail)
               return (
                 <Col key={id} lg='4' className="game">
-
-                  <Card>
-                    <Card.Img variant="top" src={thumbnail} />
-                    <Card.Body>
-                      <Card.Title>{title}</Card.Title>
-                      <Card.Text>{genre} - {platform}</Card.Text>
-                    </Card.Body>
-                  </Card>
-
+                  <Link to={`/games/${id}`}>
+                    <Card>
+                      <Card.Img variant="top" src={thumbnail} />
+                      <Card.Body>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>{genre} - {platform}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
                 </Col>
               )
 
@@ -57,7 +57,7 @@ const Home = () => {
           </div>
         </Row>
       </Container>
-    </main>
+    </main >
   )
 
 
