@@ -15,12 +15,12 @@ const PCGames = () => {
   //console.log('GAMES', games)
 
   useEffect(() => {
-  
-    const getPCGames = async() => {
+
+    const getPCGames = async () => {
       try {
         const { data } = await axios.get('/api/games?platform=pc')
         console.log(data)
-        setPCGames(data.sort((a,b) => a.title > b.title ? 1 : -1 ))
+        setPCGames(data.sort((a, b) => a.title > b.title ? 1 : -1))
       } catch (err) {
         console.log(err.message)
       }
@@ -37,26 +37,26 @@ const PCGames = () => {
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Free PC Games</h1>
           </Col>
-          <div className="games-wrapper">
-            {pcGame.map(game => {
-              const { id, title, thumbnail, genre, platform } = game
-              //console.log('PICTURE', thumbnail)
-              return (
-                <Col key={id} lg='4' className="game">
-                  <Link to={`/games/${id}`}>
-                    <Card>
-                      <Card.Img variant="top" src={thumbnail} />
-                      <Card.Body>
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Text>{genre} - {platform}</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
 
-            })}
-          </div>
+          {pcGame.map(game => {
+            const { id, title, thumbnail, genre, platform } = game
+            //console.log('PICTURE', thumbnail)
+            return (
+              <Col key={id} lg='4' className="game">
+                <Link to={`/games/${id}`}>
+                  <Card>
+                    <Card.Img variant="top" src={thumbnail} />
+                    <Card.Body>
+                      <Card.Title>{title}</Card.Title>
+                      <Card.Text>{genre} - {platform}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            )
+
+          })}
+
         </Row>
       </Container>
     </main >

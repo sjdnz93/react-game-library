@@ -14,12 +14,12 @@ const BrowserGames = () => {
   //console.log('GAMES', games)
 
   useEffect(() => {
-  
-    const getBrowserGames = async() => {
+
+    const getBrowserGames = async () => {
       try {
         const { data } = await axios.get('/api/games?platform=browser')
         console.log(data)
-        setBrowserGames(data.sort((a,b) => a.title > b.title ? 1 : -1 ))
+        setBrowserGames(data.sort((a, b) => a.title > b.title ? 1 : -1))
       } catch (err) {
         console.log(err.message)
       }
@@ -36,26 +36,26 @@ const BrowserGames = () => {
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Free Web Browser Games</h1>
           </Col>
-          <div className="games-wrapper">
-            {browserGame.map(game => {
-              const { id, title, thumbnail, genre, platform } = game
-              //console.log('PICTURE', thumbnail)
-              return (
-                <Col key={id} lg='4' className="game">
-                  <Link to={`/games/${id}`}>
-                    <Card>
-                      <Card.Img variant="top" src={thumbnail} />
-                      <Card.Body>
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Text>{genre} - {platform}</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
 
-            })}
-          </div>
+          {browserGame.map(game => {
+            const { id, title, thumbnail, genre, platform } = game
+            //console.log('PICTURE', thumbnail)
+            return (
+              <Col key={id} lg='4' className="game">
+                <Link to={`/games/${id}`}>
+                  <Card>
+                    <Card.Img variant="top" src={thumbnail} />
+                    <Card.Body>
+                      <Card.Title>{title}</Card.Title>
+                      <Card.Text>{genre} - {platform}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            )
+
+          })}
+
         </Row>
       </Container>
     </main >

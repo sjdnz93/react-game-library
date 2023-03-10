@@ -1,0 +1,28 @@
+.navbar {
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
+  .nav-item {
+    width: 160px;
+    text-align: center;
+
+    .nav-link {
+      background: #666666;
+      color: darkorange;
+      border-radius: 5px;
+    }
+  }
+}
+
+#second {
+  justify-content: flex-end;
+
+  div {
+    margin-left: 10px;
+  }
+}

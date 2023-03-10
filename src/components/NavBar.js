@@ -16,6 +16,8 @@ const NavBar = () => {
           <Nav.Item>
             <Nav.Link to="/" as={Link}>Home</Nav.Link>
           </Nav.Item>
+        </Nav>
+        <Nav variant="Pills" defaultActiveKey="/" expand="md" id="second" >
           <Nav.Item>
             <Nav.Link to="/pc" as={Link}>All PC Games</Nav.Link>
           </Nav.Item>
