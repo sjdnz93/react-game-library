@@ -20,21 +20,7 @@ import BrowserGames from './components/BrowserGames'
 const App = () => {
 
 
-  const [games, setGames] = useState([])
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/games') // * <-- replace with your endpoint
-        //console.log(data)
-        setGames(data.sort((a, b) => a.title > b.title ? 1 : -1))
-      } catch (err) {
-        console.log(err.message)
-      }
-    }
-    getData()
-    console.log(games)
-  }, [])
 
 
   return (
@@ -42,7 +28,7 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home games={games} setGames={setGames} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/pc" element={<PCGames />} />
           <Route path="/browser" element={<BrowserGames />} />
           <Route path="/games/:gameID" element={<GamePage />} />
