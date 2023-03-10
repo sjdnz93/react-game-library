@@ -44,7 +44,7 @@ const Home = () => {
 
   useEffect(() => {
     const regex = RegExp(filters, 'i')
-    const newFilteredGames = filteredGames.filter(game => {
+    const newFilteredGames = games.filter(game => {
       return regex.test(game.title)
     })
     setFilteredGames(newFilteredGames)
@@ -54,7 +54,6 @@ const Home = () => {
 
   const handleChange = (e) => {
     setFilters(e.target.value)
-    setFilteredGames(games)
 
   }
 

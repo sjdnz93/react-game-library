@@ -12,6 +12,9 @@ const PCGames = () => {
 
   const [pcGame, setPCGames] = useState([])
 
+  const [filters, setFilters] = useState('')
+  const [filteredGames, setFilteredGames] = useState([])
+
   //console.log('GAMES', games)
 
   useEffect(() => {
@@ -29,6 +32,33 @@ const PCGames = () => {
 
   }, [])
 
+  //!Executions
+  useEffect(() => {
+
+    setFilteredGames(pcGame)
+
+    console.log('FILTERED GAME STATE', filteredGames)
+
+  }, [pcGame])
+
+
+  useEffect(() => {
+    const regex = RegExp(filters, 'i')
+    const newFilteredGames = pcGame.filter(game => {
+      return regex.test(game.title)
+    })
+    setFilteredGames(newFilteredGames)
+    console.log('FILTERED', filteredGames)
+  }, [filters])
+
+
+
+  const handleChange = (e) => {
+    setFilters(e.target.value)
+  }
+
+  
+
   return (
 
     <main>
@@ -36,9 +66,10 @@ const PCGames = () => {
         <Row>
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Free PC Games</h1>
+            <input type="text" name="search" placeholder='Search game titles...' onChange={handleChange} value={filters} />
           </Col>
 
-          {pcGame.map(game => {
+          {filteredGames.map(game => {
             const { id, title, thumbnail, genre, platform } = game
             //console.log('PICTURE', thumbnail)
             return (

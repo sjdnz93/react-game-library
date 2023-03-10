@@ -11,9 +11,14 @@ const BrowserGames = () => {
 
   const [browserGame, setBrowserGames] = useState([])
 
+  const [filters, setFilters] = useState('')
+  const [filteredGames, setFilteredGames] = useState([])
+
   //console.log('GAMES', games)
 
   useEffect(() => {
+
+
 
     const getBrowserGames = async () => {
       try {
@@ -28,6 +33,34 @@ const BrowserGames = () => {
 
   }, [])
 
+  //!Executions
+  useEffect(() => {
+
+    setFilteredGames(browserGame)
+
+    console.log('FILTERED GAME STATE', filteredGames)
+
+  }, [browserGame])
+
+
+  useEffect(() => {
+   
+    const regex = RegExp(filters, 'i')
+    console.log('REGEX', regex)
+    const newFilteredGames = browserGame.filter(game => {
+      return regex.test(game.title)
+    })
+    setFilteredGames(newFilteredGames)
+    console.log('USE EFFECT', newFilteredGames)
+  }, [filters])
+
+
+
+  const handleChange = (e) => {
+    setFilters(e.target.value)
+
+  }
+
   return (
 
     <main>
@@ -35,9 +68,10 @@ const BrowserGames = () => {
         <Row>
           <Col xs="12">
             <h1 className="display-4 mb-4 text-center">Free Web Browser Games</h1>
+            <input type="text" name="search" placeholder='Search game titles...' onChange={handleChange} value={filters} />
           </Col>
 
-          {browserGame.map(game => {
+          {filteredGames.map(game => {
             const { id, title, thumbnail, genre, platform } = game
             //console.log('PICTURE', thumbnail)
             return (
