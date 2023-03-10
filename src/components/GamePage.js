@@ -31,11 +31,6 @@ const GamePage = () => {
     getGame()
   }, [gameID])
 
-
-
-  
-
-
   return (
     <main>
       <Container className="gameSingle">
@@ -43,10 +38,10 @@ const GamePage = () => {
           {game && 
             <>
               <Col xs="12">
-                <h1 className="display-4 nb-4">{game.title}</h1>
+                <h1 className="display-4 mb-4 mt-3 game-title">{game.title}</h1>
               </Col>
-              <Col md="6">
-                <img src={game.thumbnail} alt={game.title}></img>
+              <Col md="4">
+                <img src={game.thumbnail} alt={game.title} className="thumbnail"></img>
                 <p><span>Genre:</span> {game.genre}</p>
                 <p><span>Platforms:</span> {game.platform}</p>
                 <p><span>Developer:</span> {game.developer}</p>
@@ -56,7 +51,7 @@ const GamePage = () => {
                 <a href={game.game_url} className="play-game" rel="noreferrer noopener" target="_blank">CLICK TO PLAY GAME</a>
 
               </Col>
-              <Col md="6">
+              <Col md="8">
                 <h3>Description</h3>
                 <p>{game.description}</p>
               </Col>
