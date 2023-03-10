@@ -68,7 +68,7 @@ const GamePage = () => {
                 <p><span>Genre:</span> {game.genre}</p>
                 <p><span>Platforms:</span> {game.platform}</p>
                 <p><span>Developer:</span> {game.developer}</p>
-                <p><span>Publiser:</span> {game.publisher}</p>
+                <p><span>Publisher:</span> {game.publisher}</p>
                 <p><span>Release Date:</span> {game.release_date}</p>
 
                 <a href={game.game_url} className="play-game" rel="noreferrer noopener" target="_blank">CLICK TO PLAY GAME</a>

@@ -28,7 +28,7 @@ const NavBar = () => {
             <Nav.Link to="/pc" as={Link} className={location.pathname === '/pc' ? 'active' : ''}>All PC Games</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link to="/browser" as={Link} className={location.pathname === '/browser' ? 'active' : ''}>All Broswer Games</Nav.Link>
+            <Nav.Link to="/browser" as={Link} className={location.pathname === '/browser' ? 'active' : ''}>All Browser Games</Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar>
