@@ -15,6 +15,10 @@
       background: #666666;
       color: darkorange;
       border-radius: 5px;
+      &:hover, &.active {
+        background-color: darken(darkorange, 8%)!important;
+        color: #fff;
+      }
     }
   }
 }
