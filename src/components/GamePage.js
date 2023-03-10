@@ -77,6 +77,7 @@ const GamePage = () => {
               <Col md="8">
                 <h3>Description</h3>
                 <p>{game.description}</p>
+                <small>Data provided by <a href="https://www.freetogame.com/" rel="noreferrer noopener" target="_blank">FreeToGame.com</a></small>
               </Col>
             </>
 

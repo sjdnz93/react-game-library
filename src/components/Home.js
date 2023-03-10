@@ -87,8 +87,9 @@ const Home = () => {
 
         </Row>
       </Container>
+      <footer><small>Data provided by <a href="https://www.freetogame.com/" rel="noreferrer noopener" target="_blank">FreeToGame.com</a></small></footer>
     </main >
-
+    
   )
 
 
