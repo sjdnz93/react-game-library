@@ -54,7 +54,6 @@ const Home = () => {
 
   const handleChange = (e) => {
     setFilters(e.target.value)
-
   }
 
   return (

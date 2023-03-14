@@ -19,10 +19,6 @@ import BrowserGames from './components/BrowserGames'
 
 const App = () => {
 
-
-
-
-
   return (
     <div className="site-wrapper">
       <BrowserRouter>
