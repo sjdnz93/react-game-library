@@ -20,7 +20,7 @@ The app must:
 * Be deployed online and accessible to the public
 
 ## Deployment link
-<a href="https://react-game-library.netlify.app/" target="_blank" rel="noreferrer" >React Game Library - check it out here </a>
+<a href="https://react-game-library.netlify.app/">React Game Library - check it out here </a>
 
 ## Code installation
 * Clone or download the repo
@@ -28,7 +28,7 @@ The app must:
 * Run ```npm run start``` in the terminal to launch app on local server
 
 ## Timeframe and working team
-This was a group project. I worked in a pair with my coursemate Neya Omar, whose GitHub page can be found <a href="https://github.com/NeyaOmar" target="_blank" rel="noreferrer">here</a>.
+This was a group project. I worked in a pair with my coursemate Neya Omar, whose GitHub page can be found <a href="https://github.com/NeyaOmar">here</a>.
 
 We were given roughly 1.5 days to complete this project, covering the below dates.
 
@@ -42,7 +42,7 @@ We were given roughly 1.5 days to complete this project, covering the below date
 * Chrome Developer Tools
 * Excalidraw (wireframing)
 * Insomnia
-* API: <a href="https://www.freetogame.com/api-doc" target="_blank" rel="noreferrer">Free-To-Play Games Database API</a>
+* API: <a href="https://www.freetogame.com/api-doc">Free-To-Play Games Database API</a>
 
 ## Planning
 
